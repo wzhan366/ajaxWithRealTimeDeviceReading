@@ -43,9 +43,7 @@ function updateOrders() {
             dataType: 'json',
             type: 'GET',
             success: function (data) {
-              // return data['articles']
                 setTimeout(updateOrders, 5000);
-                console.log(data)
                 $(document).ready($('#myDynamicTable').html(addTable(data)))
                 var firstColumnHeader = $('#myDynamicTable thead th:first-child');
                 firstColumnHeader.css('background', '#FCD116');
@@ -103,6 +101,19 @@ $(function(){
 Use the syntax you prefer. We think that the document ready event is easier to understand when reading the code.
 
 ```
+Reading this makes our code super easy to understand, in our code, **setTimeout(updateOrders, 5000);** is the way to helpe us looping around this code. 
+**$(document).ready($('#myDynamicTable').html(addTable(data)))**, this one has a **addTable()** which is the function draws the table for us. **$** direct our code to jQuery and get document object, when it's ready, we find the element id of myDynamicTable using **#**. After this we recall function **html** to finish this whole mission.
+
+That's it. Data flows from URL to our page and formed by designed ways.
+
+Another way is worth to mention is how to handle **js** at backend, how does **html** file work with **js** code. This is basic problem, the answer is as long as you put **html, JS** together then browser will finish the job for you, like how to layout and what to show, or how to interact with user.
+
+At Django, we place all **JS** code at **/static** file, and **html** will load code from there, in oder to do so, we need to use tag **{% load static %}**, then get the specific **JS** using ** :
+```javascript 
+<script src="{% static "formsUpdate/updateTable.js" %} "></script>
+```
+
+
 
 
 
