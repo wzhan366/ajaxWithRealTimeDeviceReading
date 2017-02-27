@@ -8,3 +8,27 @@
 
 Above is from Wikipedia, it means Ajax is more like an idea instead of a hard core technique, which means the chanlleng of Ajax is how to orgaized techniques such as HTML, Javascript/jQuery together.
 
+To make things clear, I work on 2 streams, data flow and control method.
+
+###First data flow
+Ajax visit certain address/URL and bring back data to user. Then user use javascript to porcess this data in order to show these data properly.
+
+In order to visit URL, jQuery give us methods such as **get()**, **post()** and **ajax()**. Based on the API of **jQuery.ajax( [settings ] )**, we should set up the datatype of the target address such as JSON, then if the visit success, then we can process then at the success method.
+
+Target URL and ajax datatype settings should match up, otherwise the return data will be hard to manage. Normally lots of public API provides JSON based API. In our case, we just create a **HttpRespon** at Django framework,
+
+'''python 
+@ views.py
+from django.http import HttpResponse
+def realtime_data_api(request):
+	if request.method == 'GET':
+		rows = getRealdate()
+		return HttpResponse(json.dumps(rows),content_type="application/json")
+    
+    
+@ urls.py
+url(r'^realtime/$', disply_1.views.realtime_data_api, name='realtime'), #add this line in urls.py setting
+'''
+this funtion
+
+
