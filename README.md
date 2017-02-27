@@ -53,7 +53,7 @@ function updateOrders() {
         });
     }
 ```
-To get a better understand of this code here're some tips:jQuery Syntax
+To get a better understand of this code here're some tips of jQuery Syntax:
 ```javascript 
 The jQuery syntax is tailor-made for selecting HTML elements and performing some action on the element(s).
 
