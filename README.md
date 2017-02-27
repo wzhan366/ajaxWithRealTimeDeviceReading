@@ -8,9 +8,9 @@
 
 Above is from Wikipedia, it means Ajax is more like an idea instead of a hard core technique, which means the chanlleng of Ajax is how to orgaized techniques such as HTML, Javascript/jQuery together.
 
-To make things clear, I work on 2 streams, data flow and control method.
+To make things clear, I work on 2 streams, backend and front.
 
-###First data flow
+###First Backend
 Ajax visit certain address/URL and bring back data to user. Then user use javascript to porcess this data in order to show these data properly.
 
 In order to visit URL, jQuery give us methods such as **get()**, **post()** and **ajax()**. Based on the API of **jQuery.ajax( [settings ] )**, we should set up the datatype of the target address such as JSON, then if the visit success, then we can process then at the success method.
@@ -29,6 +29,30 @@ def realtime_data_api(request):
 @ urls.py
 url(r'^realtime/$', disply_1.views.realtime_data_api, name='realtime'), #add this line in urls.py setting
 ```
-this funtion
+
+As the code shows, Django will dump data to URL **./realtime/** using Json format.
+
+###Second Front
+Since we alreay know the source and datatype, then the job is super easy for us to process at Front. Here's the code to do so.
+####First JS code
+
+```javascript 
+function updateOrders() {
+        $.ajax({                                      
+            url: '/realtime',                             
+            dataType: 'json',
+            type: 'GET',
+            success: function (data) {
+              // return data['articles']
+                setTimeout(updateOrders, 5000);
+                console.log(data)
+                $(document).ready($('#myDynamicTable').html(addTable(data)))
+                var firstColumnHeader = $('#myDynamicTable thead th:first-child');
+                firstColumnHeader.css('background', '#FCD116');
+            } 
+        });
+    }
+```
+
 
 
