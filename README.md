@@ -32,7 +32,7 @@ def realtime_data_api(request):
 url(r'^realtime/$', disply_1.views.realtime_data_api, name='realtime'), #add this line in urls.py setting
 ```
 
-As the code shows, Django will dump data to URL [./realtime/] using Json format.
+As the code shows, Django will dump data to URL [I'm an inline-style link](./realtime/) using Json format.
 
 ###Second, Front
 Since we alreay know the source and datatype, then the job is super easy for us to process at Front. Here's the code to do so.
