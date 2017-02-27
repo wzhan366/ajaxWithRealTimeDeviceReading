@@ -10,8 +10,10 @@ Above is from Wikipedia, it means Ajax is more like an idea instead of a hard co
 
 To make things clear, I work on 2 streams, backend and front.
 
-###First, Backend
+###Big picture
 Ajax visit certain address/URL and bring back data to user. Then user use javascript to porcess this data in order to show these data properly.
+
+###First, Backend
 
 In order to visit URL, jQuery give us methods such as **get()**, **post()** and **ajax()**. Based on the API of **jQuery.ajax( [settings ] )**, we should set up the datatype of the target address such as JSON, then if the visit success, then we can process then at the success method.
 
