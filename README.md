@@ -17,7 +17,7 @@ In order to visit URL, jQuery give us methods such as **get()**, **post()** and 
 
 Target URL and ajax datatype settings should match up, otherwise the return data will be hard to manage. Normally lots of public API provides JSON based API. In our case, we just create a **HttpRespon** at Django framework,
 
-'''python 
+```python 
 @ views.py
 from django.http import HttpResponse
 def realtime_data_api(request):
@@ -28,7 +28,7 @@ def realtime_data_api(request):
     
 @ urls.py
 url(r'^realtime/$', disply_1.views.realtime_data_api, name='realtime'), #add this line in urls.py setting
-'''
+```
 this funtion
 
 
