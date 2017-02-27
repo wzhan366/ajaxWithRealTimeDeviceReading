@@ -116,6 +116,7 @@ At Django, we place all **JS** code at **/static** file, and **html** will load 
 ```
 
 I put the Django file structure below:
+
 ![image](https://cloud.githubusercontent.com/assets/13154388/23378545/7eb34966-fd01-11e6-97a4-9339cec4ace7.png)
 
 Combine these file structure and the code I put here, then you could see the clear way to do so.
