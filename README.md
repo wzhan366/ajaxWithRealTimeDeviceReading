@@ -1,4 +1,4 @@
-# Ajax With RealTime Device Reading
+# Ajax With Realtime Device Reading
 
 ##What's ajax
 
